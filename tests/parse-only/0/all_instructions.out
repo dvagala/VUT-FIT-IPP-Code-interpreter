@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program language="IPPcode19">
+   <instruction opcode="MOVE" order="1">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+   </instruction>
+   <instruction opcode="MOVE" order="2">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+   </instruction>
+   <instruction opcode="MOVE" order="3">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="nil">nil</arg2>
+   </instruction>
+   <instruction opcode="MOVE" order="4">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="int">8</arg2>
+   </instruction>
+   <instruction opcode="CREATEFRAME" order="5"/>
+   <instruction opcode="POPFRAME" order="6"/>
+   <instruction opcode="DEFVAR" order="7">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="CALL" order="8">
+      <arg1 type="label">label</arg1>
+   </instruction>
+   <instruction opcode="CALL" order="9">
+      <arg1 type="label">MOVE</arg1>
+   </instruction>
+   <instruction opcode="CALL" order="10">
+      <arg1 type="label">string</arg1>
+   </instruction>
+   <instruction opcode="RETURN" order="11"/>
+   <instruction opcode="PUSHS" order="12">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="PUSHS" order="13">
+      <arg1 type="string">\010</arg1>
+   </instruction>
+   <instruction opcode="POPS" order="14">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="ADD" order="15">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="ADD" order="16">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="ADD" order="17">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="ADD" order="18">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="SUB" order="19">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="SUB" order="20">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="SUB" order="21">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="SUB" order="22">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="MUL" order="23">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="MUL" order="24">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="MUL" order="25">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="MUL" order="26">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="IDIV" order="27">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="IDIV" order="28">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="IDIV" order="29">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="IDIV" order="30">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="LT" order="31">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="GT" order="32">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="EQ" order="33">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="LT" order="34">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="AND" order="35">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="OR" order="36">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="NOT" order="37">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+   </instruction>
+   <instruction opcode="NOT" order="38">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+   </instruction>
+   <instruction opcode="INT2CHAR" order="39">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+   </instruction>
+   <instruction opcode="INT2CHAR" order="40">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+   </instruction>
+   <instruction opcode="STRI2INT" order="41">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="STRI2INT" order="42">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="STRI2INT" order="43">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="STRI2INT" order="44">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="READ" order="45">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="type">string</arg2>
+   </instruction>
+   <instruction opcode="READ" order="46">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="type">int</arg2>
+   </instruction>
+   <instruction opcode="READ" order="47">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="type">bool</arg2>
+   </instruction>
+   <instruction opcode="WRITE" order="48">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="WRITE" order="49">
+      <arg1 type="string">aa</arg1>
+   </instruction>
+   <instruction opcode="WRITE" order="50">
+      <arg1 type="int">8</arg1>
+   </instruction>
+   <instruction opcode="WRITE" order="51">
+      <arg1 type="bool">true</arg1>
+   </instruction>
+   <instruction opcode="WRITE" order="52">
+      <arg1 type="nil">nil</arg1>
+   </instruction>
+   <instruction opcode="CONCAT" order="53">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="CONCAT" order="54">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="CONCAT" order="55">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="CONCAT" order="56">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="STRLEN" order="57">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+   </instruction>
+   <instruction opcode="STRLEN" order="58">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+   </instruction>
+   <instruction opcode="STRLEN" order="59">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="nil">nil</arg2>
+   </instruction>
+   <instruction opcode="STRLEN" order="60">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="int">8</arg2>
+   </instruction>
+   <instruction opcode="GETCHAR" order="61">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="GETCHAR" order="62">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="GETCHAR" order="63">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="GETCHAR" order="64">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="SETCHAR" order="65">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="SETCHAR" order="66">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="SETCHAR" order="67">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="SETCHAR" order="68">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="TYPE" order="69">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="var">GF@var</arg2>
+   </instruction>
+   <instruction opcode="TYPE" order="70">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="string">aa</arg2>
+   </instruction>
+   <instruction opcode="TYPE" order="71">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="nil">nil</arg2>
+   </instruction>
+   <instruction opcode="TYPE" order="72">
+      <arg1 type="var">GF@var</arg1>
+      <arg2 type="int">8</arg2>
+   </instruction>
+   <instruction opcode="LABEL" order="73">
+      <arg1 type="label">label</arg1>
+   </instruction>
+   <instruction opcode="JUMP" order="74">
+      <arg1 type="label">label</arg1>
+   </instruction>
+   <instruction opcode="JUMPIFEQ" order="75">
+      <arg1 type="label">label</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFEQ" order="76">
+      <arg1 type="label">label</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFEQ" order="77">
+      <arg1 type="label">label</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFEQ" order="78">
+      <arg1 type="label">label</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFNEQ" order="79">
+      <arg1 type="label">label</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFNEQ" order="80">
+      <arg1 type="label">label</arg1>
+      <arg2 type="string">aa</arg2>
+      <arg3 type="var">GF@var</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFNEQ" order="81">
+      <arg1 type="label">label</arg1>
+      <arg2 type="var">GF@var</arg2>
+      <arg3 type="nil">nil</arg3>
+   </instruction>
+   <instruction opcode="JUMPIFNEQ" order="82">
+      <arg1 type="label">label</arg1>
+      <arg2 type="bool">true</arg2>
+      <arg3 type="int">8</arg3>
+   </instruction>
+   <instruction opcode="EXIT" order="83">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="EXIT" order="84">
+      <arg1 type="string">aa</arg1>
+   </instruction>
+   <instruction opcode="EXIT" order="85">
+      <arg1 type="int">8</arg1>
+   </instruction>
+   <instruction opcode="EXIT" order="86">
+      <arg1 type="bool">true</arg1>
+   </instruction>
+   <instruction opcode="EXIT" order="87">
+      <arg1 type="nil">nil</arg1>
+   </instruction>
+   <instruction opcode="DPRINT" order="88">
+      <arg1 type="var">GF@var</arg1>
+   </instruction>
+   <instruction opcode="DPRINT" order="89">
+      <arg1 type="string">aa</arg1>
+   </instruction>
+   <instruction opcode="DPRINT" order="90">
+      <arg1 type="int">8</arg1>
+   </instruction>
+   <instruction opcode="DPRINT" order="91">
+      <arg1 type="bool">true</arg1>
+   </instruction>
+   <instruction opcode="DPRINT" order="92">
+      <arg1 type="nil">nil</arg1>
+   </instruction>
+   <instruction opcode="BREAK" order="93"/>
+</program>

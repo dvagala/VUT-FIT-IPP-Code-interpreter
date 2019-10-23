@@ -1,0 +1,120 @@
+.IPPcode19
+
+MOVE GF@var GF@var
+MOVE GF@var string@aa
+MOVE GF@var nil@nil
+MOVE GF@var int@8 
+
+CREATEFRAME
+
+POPFRAME
+
+DEFVAR GF@var
+
+CALL label
+CALL MOVE
+CALL string
+RETURN
+PUSHS  GF@var
+PUSHS string@\010
+POPS GF@var
+
+ADD GF@var GF@var GF@var
+ADD GF@var string@aa GF@var
+ADD GF@var GF@var nil@nil
+ADD GF@var bool@true int@8
+
+SUB GF@var GF@var GF@var
+SUB GF@var string@aa GF@var
+SUB GF@var GF@var nil@nil
+SUB GF@var bool@true int@8
+
+MUL GF@var GF@var GF@var
+MUL GF@var string@aa GF@var
+MUL GF@var GF@var nil@nil
+MUL GF@var bool@true int@8
+
+IDIV GF@var GF@var GF@var
+IDIV GF@var string@aa GF@var
+IDIV GF@var GF@var nil@nil
+IDIV GF@var bool@true int@8
+
+LT GF@var GF@var GF@var
+GT GF@var string@aa GF@var
+EQ GF@var GF@var nil@nil
+LT GF@var bool@true int@8
+
+AND GF@var GF@var GF@var
+OR GF@var string@aa GF@var
+NOT GF@var GF@var
+NOT GF@var bool@true
+
+INT2CHAR GF@var GF@var
+INT2CHAR GF@var string@aa
+
+STRI2INT GF@var GF@var GF@var
+STRI2INT GF@var string@aa GF@var
+STRI2INT GF@var GF@var nil@nil
+STRI2INT GF@var bool@true int@8
+
+READ GF@var string
+READ GF@var int
+READ GF@var bool
+
+WRITE GF@var
+WRITE string@aa
+WRITE int@8
+WRITE bool@true
+WRITE nil@nil
+
+CONCAT GF@var GF@var GF@var
+CONCAT GF@var string@aa GF@var
+CONCAT GF@var GF@var nil@nil
+CONCAT GF@var bool@true int@8
+
+STRLEN GF@var GF@var
+STRLEN GF@var string@aa
+STRLEN GF@var nil@nil
+STRLEN GF@var int@8 
+
+GETCHAR GF@var GF@var GF@var
+GETCHAR GF@var string@aa GF@var
+GETCHAR GF@var GF@var nil@nil
+GETCHAR GF@var bool@true int@8
+
+SETCHAR GF@var GF@var GF@var
+SETCHAR GF@var string@aa GF@var
+SETCHAR GF@var GF@var nil@nil
+SETCHAR GF@var bool@true int@8
+
+TYPE GF@var GF@var
+TYPE GF@var string@aa
+TYPE GF@var nil@nil
+TYPE GF@var int@8 
+
+LABEL label
+JUMP label
+
+JUMPIFEQ label GF@var GF@var
+JUMPIFEQ label string@aa GF@var
+JUMPIFEQ label GF@var nil@nil
+JUMPIFEQ label bool@true int@8
+
+JUMPIFNEQ label GF@var GF@var
+JUMPIFNEQ label string@aa GF@var
+JUMPIFNEQ label GF@var nil@nil
+JUMPIFNEQ label bool@true int@8
+
+EXIT GF@var
+EXIT string@aa
+EXIT int@8
+EXIT bool@true
+EXIT nil@nil
+
+DPRINT GF@var
+DPRINT string@aa
+DPRINT int@8
+DPRINT bool@true
+DPRINT nil@nil
+
+BREAK
