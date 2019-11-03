@@ -1,0 +1,119 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[left=15mm, top=12mm, bottom=8mm, right=15mm]{geometry}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{pagecolor,lipsum}% http://ctan.org/pkg/{pagecolor,lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{changepage}  
+\usepackage{courier}
+\usepackage{titlesec}
+
+\titleformat{\section}{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{11}{13}\bfseries}{\thesection}{1em}{}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand\labelitemi{--}
+
+\setlist[description]{style=nextline, font=\normalfont\fontsize{10}{13}\bfseries, leftmargin=0.6cm}
+% \setlist[itemize]{leftmargin=0.8cm}
+% \setlist[enumerate]{leftmargin=0.8cm}
+
+\begin{document}
+% \color{white}
+% \pagecolor{black!85!white} 
+
+\noindent Documentation of project implementation for 2. task IPP 2018/2019\\
+Name and surname: Dominik Vagala\\
+Login: xvagal00\\\\\\
+ 
+\section*{Interpret.py}
+The goal was to create script, that will interpret xml representation of IPPcode19 source code.
+ 
+\section*{Solution}
+
+Main script \textbf{interpret.py} uses multiple classes from separate scripts. Syntax analysis is not implemented by any strict scheme, because of relatively simple syntax in source language IPPcode19. All syntax rules for instructions are stored in list of Instruction object in this form: STRI2INT <var> <symb> <symb>. The main script provides following functionality:
+\begin{enumerate}[itemsep=0mm]
+	\item Parse program arguments with modified Argparse, so if error occurred while parsing arguments script can exit with proper exit code.
+	\item Read xml source code and store it to list of lines
+	\item Check xml source code syntax
+	\item Get list of Instruction objects from xml source code
+	\item Do lexical analysis on list of instructions
+	\item Do syntax analysis on list of instructions
+	\item Do semantics analysis on list of instructions - check if there is redefinition of label, or not define label
+	\item Replace escape sequences in string types in source code to normal symbols.  
+	\item Interpret code
+\end{enumerate}
+
+\section*{Code interpretation}
+Whole code interpretation do \textbf{interpretCode(instructionsList, inputLines)} function. It takes list of Instruction objects and list of input lines from user. If user not specified input file, function \textbf{readInput(inputLines)} ensures that STDIN will be used instead. Interpretation go on line by line in loop by incrementing \textbf{currentInstructionIndex} and do interpretation on \textbf{instructionsList[currentInstructionIndex]}. Function \textbf{getLablesIndexes(instructionsList)} return dictionary with labels names and it's index in list of instructions. So when interpret should perform jump to label, it just finds label name in dictionary with corresponding index and change \textbf{currentInstructionIndex} to that. For generalization purposes it always store argument data from given instruction to \textbf{destinationData}, \textbf{sourceDataFirst} and \textbf{sourceDataSecond} even before it knows what instruction it should perform. That's because a lot of instructions has this format: INSTRUCTION dest [source] [source].
+
+\subsection*{Classes}
+\begin{adjustwidth}{0.5cm}{}
+
+\begin{description}
+	\item[Argument]Represents argument in IPPcode19. Attributes:
+	\begin{itemize}
+		\item type: Type of argument. E.g.: symb, var, string
+		\item name: Name of argument
+		\item order: Position of instruction in instructions
+	\end{itemize}		
+\end{description}
+
+\begin{description}
+	\item[Instruction]Represents instruction in IPPcode19. Attributes:
+	\begin{itemize}
+		\item name: Name of instruction
+		\item arguments: List of Argument objects
+		\item order: Position of argument in instruction arguments
+	\end{itemize}		
+\end{description}
+
+
+\begin{description}
+	\item[Error]Represents one error type according to project specification. Attributes:
+	\begin{itemize}
+		\item description: Friendly description of error type that will be printed to stderr
+		\item code: Exit code
+	\end{itemize}		
+\end{description}
+\end{adjustwidth} 
+
+\newpage 
+
+\section*{Test.php}
+The goal was to create script, that will automate test process of parse.php and interpret.py and print test results in html code to STDOUT.
+
+
+\section*{Solution}
+
+Script sequentially test source files from directory that user specified. These files are accessed by DirectoryIterator or RecursiveDirectoryIterator.
+Steps:
+\begin{enumerate}[itemsep=0mm]
+	\item Parse program arguments
+	\item Print html starting code
+	\item For each test in source files do following:
+	\begin{enumerate}[itemsep=0mm]
+		\item Print test name to html table
+		\item Create default rc, out and in files if not exists
+		\item Execute parser or interpret or both scripts with source file and store results
+		\item Check if result are the same as expected
+		\item Print results to html table
+		\item Delete temporary files that has been created during test
+	\end{enumerate}
+	\item Print html summary ending code
+\end{enumerate}
+
+
+\subsection*{Classes}
+\begin{adjustwidth}{0.5cm}{}
+\begin{description}
+	\item[HtmlGenerator]Print various html code parts to STDOUT	
+\end{description}
+
+ 
+\end{adjustwidth} 
+\end{document}
+
+

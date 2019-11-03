@@ -1,0 +1,80 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[left=15mm, top=12mm, bottom=8mm, right=15mm]{geometry}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{pagecolor,lipsum}% http://ctan.org/pkg/{pagecolor,lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{changepage}  
+\usepackage{courier}
+\usepackage{titlesec}
+
+\titleformat{\section}{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{11}{13}\bfseries}{\thesection}{1em}{}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand\labelitemi{--}
+
+\setlist[description]{style=nextline, font=\normalfont\fontsize{10}{13}\bfseries, leftmargin=0.6cm}
+% \setlist[itemize]{leftmargin=0.8cm}
+% \setlist[enumerate]{leftmargin=0.8cm}
+
+\begin{document}
+% \color{white}
+% \pagecolor{black!85!white} 
+
+\noindent Documentation of project implementation for 1. task IPP 2018/2019\\
+Name and surname: Dominik Vagala\\
+Login: xvagal00\\\\\\
+ 
+\section*{Task}
+The goal was to create script, which will check if given IPPcode19 code is lexically and syntactically correct and print it's xml representation to STDOUT.
+ 
+\section*{Solution}
+
+Main script \textbf{parse.php} uses multiple classes from separate scripts to encapsulate logical parts and functions. Syntax analysis is not implemented by any strict scheme, because of relatively simple syntax in source language IPPcode19. All syntax rules for instructions are stored in array in this form: STRI2INT <var> <symb> <symb>, so if someone adds a new instruction to IPPcode19, only one line of code needs to be added. The main script provides following functionality:
+\begin{enumerate}[itemsep=0mm]
+	\item Parse program arguments.
+	\item Check syntax on global level, call \texttt{InstructionsHelper::check\_instruction\_syntax()} to check individual instructions syntax.
+	\item Call \texttt{XmlGenerator::printXmlToStdin()} to generate xml code, if there's no lexical or syntactical error.
+\end{enumerate}
+
+\subsection*{Classes}
+\begin{adjustwidth}{0.5cm}{}
+
+\begin{description}
+	\item[Token]Represents token with type and data information.
+\end{description}
+
+\begin{description}
+	\item[Lexer] Provides lexical analysis. These steps are executed when \texttt{Lexer::nextToken()} is called:
+	\begin{enumerate}
+		\item Discard whitespaces and comments from stdin with \texttt{discardUselessStuffFromStdin()}, stop at the beginning 	of 	code or header.
+		\item If in previous step a new line character was discarded, return token object with EOL type. Otherwise continue.
+		\item Read symbols with \texttt{readString()}, stop at whitespace or comment.
+		\item With regexes determine what type of code was there, store the information in the token object and return to caller.
+	\end{enumerate}
+\end{description}
+
+\begin{description}
+	\item[Instruction] Represent one instruction syntax, store information about instruction name and it's parameters. E.g., STRI2INT <var> <symb> <symb>.
+\end{description}
+
+\begin{description}
+	\item[InstructionHelper] Provides instruction syntax analysis. Functions:
+	\begin{itemize}
+	   \item \texttt{fill\_instructions\_rules()}: fill array \texttt{instr\_rules} with instructions syntax rules according to IPPcode19 specification.
+	   \item \texttt{get\_instruction()}: return \texttt{instruction} object from array \texttt{instr\_rules} by instruction name.
+	   \item \texttt{check\_instruction\_syntax()}: get current instruction name and gradually call\\ \texttt{Lexer::nextToken()} to check if syntax is correct.
+	\end{itemize}
+\end{description}
+
+\begin{description}
+	\item[XmlGenerator] Wrapper for \texttt{Xmlwriter} extension and also prints actual xml code to STDOUT.
+\end{description}
+ 
+\end{adjustwidth} 
+\end{document}
+
+
